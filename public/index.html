@@ -34,7 +34,9 @@
             email: $email.val()
           },
           success: (res) => {
-            console.log(res);
+            if(res) {
+              window.location.href = 'http://localhost:9000/passed';
+            }
           }
         })
       });
