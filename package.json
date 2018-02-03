@@ -1,0 +1,23 @@
+{
+  "name": "fullstack-form-app",
+  "version": "1.0.0",
+  "description": "A Fullstack app that sends submitted form data through a server and responds back",
+  "main": "route.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortensenm1205/Fullstack-form-app.git"
+  },
+  "author": "Matt Mortensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mortensenm1205/Fullstack-form-app/issues"
+  },
+  "homepage": "https://github.com/mortensenm1205/Fullstack-form-app#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.14.12"
+  }
+}
