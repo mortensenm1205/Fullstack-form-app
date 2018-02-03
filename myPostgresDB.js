@@ -6,7 +6,9 @@ const pool = new Pool({
 });
 
 function postData(name, email) {
-  pool.query('INSERT INTO users (full_name, email) VALUES ($1, $2)', [name, email], (err, res) => {});
+  pool.query('INSERT INTO users (full_name, email) VALUES ($1, $2)', [name, email], (err, result) => {
+    console.log(result);
+  });
 }
 
 function getData(table) {
