@@ -27,7 +27,7 @@
 
       $submitBtn.click((event) => {
         $.ajax({
-          url: 'http://localhost/',
+          url: 'https://cryptic-sands-45425.herokuapp.com/',
           method: 'POST',
           data: {
             full_name: $name.val(),
@@ -35,7 +35,7 @@
           },
           success: (res) => {
             if(res) {
-              window.location.href = 'http://localhost/passed';
+              window.location.href = 'https://cryptic-sands-45425.herokuapp.com/passed';
             }
           }
         })
