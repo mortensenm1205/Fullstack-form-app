@@ -1,12 +1,9 @@
 const { Pool, Client } = require('pg');
-const connectionString = `postgresql://mattmortensen:blackshoes01@${process.env.DATABASE_URL}/fullstack_form_db`;
+const connectionString = 'postgresql://mattmortensen:blackshoes01@cryptic-sands-45425.herokuapp/fullstack_form_db';
 
 const pool = new Pool({
-  connectionString: connectionString,
-  ssl: true
+  connectionString: connectionString
 });
-
-console.log(connectionString);
 
 function postData(name, email) {
   pool.query('INSERT INTO users (full_name, email) VALUES ($1, $2)', [name, email], (err, result) => {
