@@ -1,8 +1,11 @@
-const { Pool, Client } = require('pg');
-const connectionString = 'postgresql://mattmortensen:blackshoes01@cryptic-sands-45425.herokuapp/fullstack_form_db';
+const { Pool } = require('pg');
+// const connectionString = 'postgresql://mattmortensen:blackshoes01@cryptic-sands-45425.herokuapp/fullstack_form_db';
 
 const pool = new Pool({
-  connectionString: connectionString
+  database: "fullstack_form_db",
+  host: process.env.DATABASE_URL,
+  user: "mattmortensen",
+  password: "blackshoes01"
 });
 
 function postData(name, email) {
@@ -29,32 +32,3 @@ module.exports = {
   postData: postData,
   getData: getData
 }
-
-
-
-
-
-
-
-
-
-
-
-// const values = ["Bobby Boi", "bob@bobby.com"];
-
-// pool.query('SELECT * FROM users', (err, res) => {
-//   console.log(err, res.rows[1]);
-//   pool.end();
-// });
-
-//
-// const client = new Client({
-//   database: 'fullstack_form_db'
-// });
-//
-// client.connect();
-//
-// client.query('SELECT * FROM users', (err, res) => {
-//   console.log(err, res.rows[0]);
-//   client.end();
-// })
