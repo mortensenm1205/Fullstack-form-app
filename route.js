@@ -7,8 +7,9 @@ app.use(bodyParser.urlencoded({ extended:true }));
 app.use('/', express.static('public'));
 
 app.post('/', (req, res) => {
-  pg.postData(req.body.full_name, req.body.email);
+  // pg.postData(req.body.full_name, req.body.email);
   res.send('post recieved');
+  console.log(req.body.full_name, req.body.email);
 });
 
 app.get('/passed', (req, res) => {
