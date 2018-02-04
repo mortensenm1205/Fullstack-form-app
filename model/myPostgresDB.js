@@ -1,5 +1,5 @@
 const { Pool, Client } = require('pg');
-const connectionString = 'postgresql://mattmortensen:blackshoes01@localhost/fullstack_form_db';
+const connectionString = 'postgresql://mattmortensen:blackshoes01@cryptic-sands-45425.herokuapp.com/fullstack_form_db';
 
 const pool = new Pool({
   connectionString: connectionString
