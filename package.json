@@ -1,6 +1,10 @@
 {
   "name": "fullstack-form-app",
   "version": "1.0.0",
+  "engine": {
+    "node": "9.5.0",
+    "npm": "5.6.0"
+  },
   "description": "A Fullstack app that sends submitted form data through a server and responds back",
   "main": "route.js",
   "scripts": {
@@ -16,10 +20,6 @@
     "url": "https://github.com/mortensenm1205/Fullstack-form-app/issues"
   },
   "homepage": "https://github.com/mortensenm1205/Fullstack-form-app#readme",
-  "engine": {
-    "node": "9.5.0",
-    "npm": "5.6.0"
-  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",

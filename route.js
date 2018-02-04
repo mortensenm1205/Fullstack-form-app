@@ -19,6 +19,6 @@ app.get('/passed', (req, res) => {
   });
 })
 
-app.listen(9000, () => {
-  console.log('Running on PORT 9000');
+app.listen(process.env.PORT || 9000, ,'0.0.0.0', () => {
+  console.log('Running on PORT ' + );
 })
