@@ -20,5 +20,5 @@ app.get('/passed', (req, res) => {
 })
 
 app.listen(process.env.PORT || 9000, '0.0.0.0', () => {
-  console.log('Running on PORT ' + );
+  console.log('Running on PORT ');
 })
