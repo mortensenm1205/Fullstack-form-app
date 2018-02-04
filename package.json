@@ -8,7 +8,7 @@
   "description": "A Fullstack app that sends submitted form data through a server and responds back",
   "main": "route.js",
   "scripts": {
-    "start": "node ./cntrl/route.js"
+    "start": "node route.js"
   },
   "repository": {
     "type": "git",
