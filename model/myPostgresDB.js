@@ -15,6 +15,7 @@ function postData(name, email) {
       done();
     });
   });
+  pool.end();
 }
 
 function getData(table) {

@@ -17,7 +17,6 @@ app.get('/passed', (req, res) => {
     pool.end();
   }).catch((err) => {
     console.log(err);
-    pool.end();
   });
 })
 
