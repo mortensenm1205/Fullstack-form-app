@@ -9,24 +9,31 @@ const pool = new Pool({
 });
 
 function postData(name, email) {
-  pool.query('INSERT INTO users (full_name, email) VALUES ($1, $2)', [name, email], (err, result) => {
-    console.log(result);
-  });
+  pool.connect((err, client, done) => {
+    client.query('INSERT INTO users (full_name, email) VALUES ($1, $2)', [name, email], (err, result) => {
+      console.log(result);
+      done();
+    });
+  })
 }
 
 function getData(table) {
   return new Promise((resolve, reject) => {
+    pool.connect((err, client, done) => {
+      client.query(`SELECT * FROM ${table}`, (err, res) => {
 
-    pool.query(`SELECT * FROM ${table}`, (err, res) => {
+        if (err) {
+          reject(new Error('whoops'));
+        }
 
-      if (err) {
-        reject(new Error('whoops'));
-      }
-
-      resolve(res);
-    });
+        resolve(res);
+        done();
+      });
+    })
   });
 }
+
+pool.end();
 
 module.exports = {
   postData: postData,
