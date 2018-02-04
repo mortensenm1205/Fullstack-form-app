@@ -3,8 +3,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var pg = require('./model/myPostgresDB.js');
 
-app.set('trust proxy', 'loopback');
-
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use('/', express.static('public'));
 
