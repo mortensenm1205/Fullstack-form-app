@@ -4,7 +4,7 @@
   "description": "A Fullstack app that sends submitted form data through a server and responds back",
   "main": "route.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node route.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,10 @@
     "url": "https://github.com/mortensenm1205/Fullstack-form-app/issues"
   },
   "homepage": "https://github.com/mortensenm1205/Fullstack-form-app#readme",
+  "engine": {
+    "node": "9.5.0",
+    "npm": "5.6.0"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
