@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 
 const pool = new Pool({
   database: "fullstack_form_db",
-  host: process.env.DATABASE_URL,
+  host: 'https://cryptic-sands-45425.herokuapp.com',
   user: "mattmortensen",
   password: "blackshoes01"
 });
@@ -14,7 +14,8 @@ function postData(name, email) {
       console.log(result);
       done();
     });
-  })
+  });
+  pool.end();
 }
 
 function getData(table) {
@@ -33,7 +34,6 @@ function getData(table) {
   });
 }
 
-pool.end();
 
 module.exports = {
   postData: postData,
