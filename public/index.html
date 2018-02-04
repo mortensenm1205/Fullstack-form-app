@@ -27,7 +27,7 @@
 
       $submitBtn.click((event) => {
         $.ajax({
-          url: 'http://localhost/:9000',
+          url: 'https://localhost/:9000',
           method: 'POST',
           data: {
             full_name: $name.val(),
@@ -35,7 +35,7 @@
           },
           success: (res) => {
             if(res) {
-              window.location.href = 'http://localhost:9000/passed';
+              window.location.href = 'https://localhost:9000/passed';
             }
           }
         })
