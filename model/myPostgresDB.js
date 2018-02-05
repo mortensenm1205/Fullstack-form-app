@@ -1,8 +1,9 @@
 const { Pool } = require('pg');
-// const connectionString = 'postgresql://mattmortensen:blackshoes01@cryptic-sands-45425.herokuapp/fullstack_form_db';
+
+
 const pool = new Pool({
   database: "fullstack_form_db",
-  host: 'heroku config:get DATABASE_URL -a cryptic-sands-45425',
+  host: 'localhost'
   user: "mattmortensen",
   password: "blackshoes01"
 });
