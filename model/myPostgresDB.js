@@ -2,10 +2,7 @@ const { Pool } = require('pg');
 
 
 const pool = new Pool({
-  database: "fullstack_form_db",
-  host: process.env.DATABASE_URL,
-  user: "mattmortensen",
-  password: "blackshoes01"
+  connectionString: process.env.DATABASE_URL,
 });
 
 console.log(process.env.DATABASE_URL);
