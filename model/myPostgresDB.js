@@ -32,7 +32,6 @@ function getData(table) {
         resolve(result);
       });
     });
-    pool.end();
   });
 }
 

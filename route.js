@@ -15,7 +15,6 @@ app.post('/', (req, res) => {
 app.get('/passed', (req, res) => {
   pg.getData('users').then((result) => {
     res.send(`Hello ${result.rows[result.rows.length - 1].full_name}, your email is now under: ${result.rows[result.rows.length - 1].email}`);
-    done();
     pool.end();
   }).catch((err) => {
     console.log(err);
