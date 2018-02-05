@@ -30,7 +30,6 @@ function getData(table) {
         done();
         console.log("some text before resolve");
         resolve(result);
-        console.log("some text after resolve");
       });
     });
     pool.end();
