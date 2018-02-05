@@ -21,14 +21,16 @@ function postData(name, email) {
 function getData(table) {
   return new Promise((resolve, reject) => {
     pool.connect((err, client, done) => {
-      client.query(`SELECT * FROM ${table}`, (err, res) => {
+      client.query(`SELECT * FROM ${table}`, (err, result) => {
 
         if (err) {
           reject(new Error('whoops'));
         }
-        
+
         done();
-        resolve(res);
+        console.log("some text before resolve");
+        resolve(result);
+        console.log("some text after resolve");
       });
     });
     pool.end();
