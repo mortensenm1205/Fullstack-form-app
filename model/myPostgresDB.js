@@ -25,11 +25,9 @@ function getData(table) {
         if (err) {
           reject(new Error('whoops'));
         }
-        done();
         resolve(result);
       });
     });
-    pool.end();
   });
 }
 
