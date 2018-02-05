@@ -28,11 +28,10 @@ function getData(table) {
         }
 
         done();
-        console.log("some text before resolve");
+        pool.end();
         resolve(result);
       });
     });
-    pool.end();
   });
 }
 
