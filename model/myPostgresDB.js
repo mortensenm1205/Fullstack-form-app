@@ -1,14 +1,21 @@
 const { Pool } = require('pg');
+const connectionString = 'postgresql://mattmortensen:blackshoes01@localhost/fullstack_form_db';
 
 
-const pool = new Pool();
 
-console.log(process.env.DATABASE_URL + "some text");
+const pool = new Pool({
+  database: "fullstack_form_db",
+  host: 'localhost'
+  user: "mattmortensen",
+  password: "blackshoes01"
+});
+
+console.log(process.env.DATABASE_URL);
 
 function postData(name, email) {
-  pool.connect(process.env.DATABASE_URL, (err, client, done) => {
+  pool.connect((err, client, done) => {
     client.query('INSERT INTO users (full_name, email) VALUES ($1, $2)', [name, email], (err, result) => {
-      console.log(result + "some more new text");
+      console.log(result);
       done();
     });
   });
@@ -17,15 +24,17 @@ function postData(name, email) {
 
 function getData(table) {
   return new Promise((resolve, reject) => {
-    pool.connect(process.env.DATABASE_URL, (err, client, done) => {
+    pool.connect((err, client, done) => {
       client.query(`SELECT * FROM ${table}`, (err, result) => {
 
         if (err) {
           reject(new Error('whoops'));
         }
+        done();
         resolve(result);
       });
     });
+    pool.end();
   });
 }
 
