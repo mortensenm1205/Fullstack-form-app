@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 
 const pool = new Pool({
   database: "fullstack_form_db",
-  host: 'https://cryptic-sands-45425.herokuapp.com',
+  host: process.env.DATABASE_URL,
   user: "mattmortensen",
   password: "blackshoes01"
 });
@@ -26,10 +26,11 @@ function getData(table) {
         if (err) {
           reject(new Error('whoops'));
         }
-
+        done();
         resolve(result);
       });
     });
+    pool.end();
   });
 }
 
