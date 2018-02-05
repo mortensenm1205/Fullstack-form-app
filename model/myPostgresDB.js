@@ -30,7 +30,8 @@ function getData(table) {
         resolve(res);
         done();
       });
-    })
+    });
+    pool.end();
   });
 }
 
