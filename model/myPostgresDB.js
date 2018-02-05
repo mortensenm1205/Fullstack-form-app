@@ -5,12 +5,12 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-console.log(process.env.DATABASE_URL);
+console.log(process.env.DATABASE_URL + "some text");
 
 function postData(name, email) {
   pool.connect((err, client, done) => {
     client.query('INSERT INTO users (full_name, email) VALUES ($1, $2)', [name, email], (err, result) => {
-      console.log(result);
+      console.log(result + "some more new text");
       done();
     });
   });
