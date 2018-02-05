@@ -27,8 +27,6 @@ function getData(table) {
           reject(new Error('whoops'));
         }
 
-        done();
-        pool.end();
         resolve(result);
       });
     });
