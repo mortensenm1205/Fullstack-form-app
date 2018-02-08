@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>HTML POST</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="">
   </head>
   <body>
     <form>
@@ -34,7 +35,9 @@
             email: $email.val()
           },
           success: (res) => {
-
+            if(res) {
+              window.location = 'http://localhost:9000/passed'
+            }
           }
         })
       });
